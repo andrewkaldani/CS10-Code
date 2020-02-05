@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+int main(){
+  // just double not Double
+double a, b, c;
+double intermediate;
+//need to declare intermediate
+// no b=2;
+cout<<"Enter length of hypotenuse"<<endl;
+// no end line after user input
+cin>>c;
+// should be cout<<
+cout<<"Enter length of a side"<<endl;
+cin>>a;
+
+intermediate = pow(c, 2) - pow(a, 2);
+b = sqrt(intermediate);
+
+// just endl not endline and forgot << before b
+cout<<"Length of other side is:" << b <<endl;
+return 0;
+}
