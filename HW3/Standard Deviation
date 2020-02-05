@@ -1,0 +1,43 @@
+#include <iostream>
+#include<cmath>
+using namespace std;
+
+const int MAX = 50;
+void input(int arrays[], int &size){
+    cout << "How many values do you want to enter? ";
+    cin >> size;
+    for(int i = 0; i < size; i++){
+        cout << "Enter a value: ";
+        cin >> arrays[i];
+    }
+    return;
+}
+int mean(int a[], int size)
+{
+    int sum = 0;
+    for (int i = 0; i < size; i++)
+    {
+        sum += a[i];
+    }
+    double average = (double)sum /
+                  (double)size;
+
+
+    double sq = 0;
+    for (int i = 0; i < size; i++)
+    sq += (a[i] - average) * (a[i] - average);
+    return sq / size;
+}
+
+double stdDev(int arr[], int size)
+{
+    return sqrt(mean(arr, size));
+}
+int main()
+{
+  int array[MAX];
+  int size;
+  input(array, size);
+  cout<<"Standerd Dev is: "<<stdDev(array,size)<<endl;
+  return 0;
+}
